@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Services - STOCKSYS</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Site CSS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+      <link rel="Stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f4f6fb;
+        margin: 0;
+        padding: 0;
+      }
+
+      
+
+
+      
+
+      .brand-text {
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+
+      .nav-link {
+        color: #555 !important;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: #0d6efd !important;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #2e4da1, #002b5b);
+        border: none;
+        font-weight: 600;
+        transition: transform 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #2e4da1, #002b5b);
+        color: white;
+        padding: 100px 20px;
+        text-align: center;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      }
+      .hero h1 {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+      .hero p {
+        font-size: 1.2rem;
+        margin-top: 15px;
+        opacity: 0.95;
+      }
+
+      /* Services Section - Fixed */
+      .services {
+        padding: 200px 200px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+        color: #002b5b;
+        margin-bottom: 15px;
+      }
+
+      .section-header p {
+        font-size: 1.1rem;
+        color: #666;
+      }
+
+      /* Services Grid - Properly Centered */
+      .services-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        max-width: 1140px;
+        margin: 0 auto;
+      }
+
+      /* Card Flip Container */
+      .service-card {
+        width: 340px;
+        max-width: 100%;
+        height: 420px;
+        perspective: 1000px;
+      }
+
+      .service-box {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s ease-in-out;
+        transform-style: preserve-3d;
+        cursor: pointer;
+      }
+
+      .service-card:hover .service-box {
+        transform: rotateY(180deg);
+      }
+
+      /* Front and Back Face Styles */
+      .service-front,
+      .service-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 20px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 30px 25px;
+      }
+
+      .service-front {
+        background: white;
+        border: 2px solid transparent;
+      }
+
+      .service-back {
+        background: linear-gradient(135deg, #0d6efd, #002b5b);
+        color: white;
+        transform: rotateY(180deg);
+        padding: 40px 30px;
+      }
+
+      .service-card:hover .service-front {
+        border-color: #0d6efd;
+      }
+
+      .service-img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 14px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .icon-circle {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #0d6efd, #002b5b);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 36px;
+        margin: 0 auto 20px auto;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-front h4 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #002b5b;
+      }
+
+      .service-front p {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      /* Back Side Content */
+      .service-back h4 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: white;
+        margin-top: 10px;
+        display: none;
+      }
+
+      .service-back .back-description {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 25px;
+        line-height: 1.5;
+      }
+
+      .service-back .features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 25px 0;
+      }
+
+      .service-back .features li {
+        padding: 8px 0;
+        font-size: 0.9rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        display: flex;
+        align-items: center;
+      }
+
+      .service-back .features li:last-child {
+        border-bottom: none;
+      }
+
+      .service-back .features li i {
+        margin-right: 10px;
+        color: #ffd700;
+        font-size: 0.8rem;
+        min-width: 14px;
+      }
+
+      .service-back .cta-button {
+        background: white;
+        color: #0d6efd;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin-top: auto;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: none;
+      }
+
+      .service-back .cta-button:hover {
+        background: #f8f9ff;
+        transform: scale(1.05);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+        
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .services {
+          padding: 60px 15px;
+        }
+
+        .section-header h2 {
+          font-size: 2rem;
+        }
+
+        .services-grid {
+          gap: 20px;
+        }
+
+        .service-card {
+          width: 100%;
+          max-width: 350px;
+          height: 380px;
+        }
+
+        .service-back {
+          padding: 30px 20px;
+        }
+
+        .service-back .features li {
+          font-size: 0.85rem;
+          padding: 6px 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .service-card {
+          height: 360px;
+        }
+        
+        .service-front,
+        .service-back {
+          padding: 25px 20px;
+        }
+        
+        .service-img {
+          height: 140px;
+        }
+      }
+
+      /* Footer Styles */
+      .footer { background: #0551c2; color: #fff; padding: 50px 0; }
+      .footer .widget { margin-bottom: 20px; }
+      .footer h5 { font-size: 1.2rem; font-weight: 600; margin-bottom: 15px; color: #fff; }
+      .footer ul { list-style: none; padding: 0; }
+      .footer ul li { margin-bottom: 10px; }
+      .footer ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+      .footer ul li a:hover { color: #fff; }
+      .footer-about-social-icon ul { display: flex; list-style: none; padding: 0; margin-top: 20px; }
+      .footer-about-social-icon ul li { margin-right: 15px; }
+      .footer-about-social-icon ul li a { font-size: 18px; color: #fff; transition: color 0.3s; }
+      .footer-about-social-icon ul li a:hover { color: #4a69bd; }
+      .footer-logo img { max-width: 150px; margin-bottom: 15px; }
+      .footer-copyright-section { background: #0551c2; color: #fff; padding: 20px 0; border-top: 1px solid #666; }
+      .footer-copyright-text p { margin: 0; font-size: 0.9rem; }
+      .footer-copyright-link ul { display: flex; justify-content: flex-end; list-style: none; padding: 0; margin: 0; }
+      .footer-copyright-link ul li { margin-left: 15px; }
+      .footer-copyright-link ul li a { color: #ccc; font-size: 0.9rem; transition: color 0.3s; }
+      .footer-copyright-link ul li a:hover { color: #fff; }
+      @media (max-width: 768px) {
+        .footer .row { flex-direction: column; align-items: center; text-align: center; }
+        .footer-copyright-link ul { justify-content: center; margin-top: 10px; }
+      }
+    </style>
+  </head>
+  <body>
+   <div class="capsule-navbar">
+  <nav class="navbar navbar-expand-lg p-0">
+    <div class="container-fluid">
+       <!-- Logo positioned at top left -->
+          <a href="index.html" class="navbar-brand d-flex align-items-center">
+      <!-- First Logo (Graph) -->
+          <img src="assets/stocklogo1.png" alt="Logo1" class="logo-img" style="height: 80px; width: 80px;">
+
+      <!-- Second Logo / Website Name -->
+          <img src="assets/stocklogo3.png" alt="Logo2" class="logo-img ms-2" style="height: 50px; width: 190px;">
+          </a>
+
+      <!-- Mobile toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navigation menu -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#hero-section">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+        <a href="contact.html#subscribe" class="btn btn-primary px-4 rounded-pill">Subscription</a>
+      </div>
+    </div>
+  </nav>
+</div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Our Services</h1>
+      <p>
+        Empowering traders with trusted tools, insights, and secure solutions
+      </p>
+    </section>
+   
+    <!-- Services Grid -->
+    <section class="services py-5">
+      <div class="section-header">
+        <h2 class="fw-bold services-title">What We Offer</h2>
+        <p class="text-muted">Tailored solutions to help you trade smarter</p>
+      </div>
+      <div class="services-grid">
+  <div class="service-card">
+    <div class="service-box">
+      <div class="service-front">
+        <div class="icon-circle"><i class="bi bi-graph-up-arrow"></i></div>
+        <h4>Market Research</h4>
+        <img src="assets/Market Research.jpeg" alt="Market Research" class="service-img"/>
+      </div>
+      <div class="service-back">
+        <p class="back-description">Comprehensive market analysis and insights to empower your trading decisions with data-driven strategies.</p>
+        <ul class="features">
+          <li><i class="bi bi-check-circle-fill"></i>Real-time market data & live charts</li>
+          <li><i class="bi bi-check-circle-fill"></i>Advanced technical analysis tools</li>
+          <li><i class="bi bi-check-circle-fill"></i>Customizable stock screeners</li>
+          <li><i class="bi bi-check-circle-fill"></i>Price alerts & smart notifications</li>
+          <li><i class="bi bi-check-circle-fill"></i>Expert research reports & analysis</li>
+          <li><i class="bi bi-check-circle-fill"></i>Market sentiment indicators</li>
+          <li><i class="bi bi-check-circle-fill"></i>Economic calendar integration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-box">
+      <div class="service-front">
+        <div class="icon-circle"><i class="bi bi-currency-bitcoin"></i></div>
+        <h4>Crypto Solutions</h4>
+        <img src="assets/crypto solutions.jpeg" alt="Crypto Solutions" class="service-img"/>
+      </div>
+      <div class="service-back">
+        <p class="back-description">Complete cryptocurrency ecosystem with secure trading, tracking, and advanced DeFi integrations.</p>
+        <ul class="features">
+          <li><i class="bi bi-check-circle-fill"></i>Multi-exchange wallet tracking</li>
+          <li><i class="bi bi-check-circle-fill"></i>DeFi protocol integrations</li>
+          <li><i class="bi bi-check-circle-fill"></i>Crypto price alerts & analytics</li>
+          <li><i class="bi bi-check-circle-fill"></i>Automated tax reporting</li>
+          <li><i class="bi bi-check-circle-fill"></i>Staking rewards optimization</li>
+          <li><i class="bi bi-check-circle-fill"></i>NFT portfolio management</li>
+          <li><i class="bi bi-check-circle-fill"></i>Yield farming opportunities</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-box">
+      <div class="service-front">
+        <div class="icon-circle"><i class="bi bi-wallet2"></i></div>
+        <h4>Portfolio Management</h4>
+        <img src="assets/portfolio management.jpeg" alt="Portfolio Management" class="service-img"/>
+      </div>
+      <div class="service-back">
+        <p class="back-description">Intelligent portfolio optimization with AI-driven insights and professional-grade risk management tools.</p>
+        <ul class="features">
+          <li><i class="bi bi-check-circle-fill"></i>AI-powered asset allocation</li>
+          <li><i class="bi bi-check-circle-fill"></i>Advanced risk assessment models</li>
+          <li><i class="bi bi-check-circle-fill"></i>Performance benchmarking</li>
+          <li><i class="bi bi-check-circle-fill"></i>Smart rebalancing algorithms</li>
+          <li><i class="bi bi-check-circle-fill"></i>Dividend & income tracking</li>
+          <li><i class="bi bi-check-circle-fill"></i>Tax-loss harvesting</li>
+          <li><i class="bi bi-check-circle-fill"></i>Goal-based investment planning</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-box">
+      <div class="service-front">
+        <div class="icon-circle"><i class="bi bi-phone"></i></div>
+        <h4>Mobile Access</h4>
+        <img src="assets/Mobile access.jpeg" alt="Mobile Access" class="service-img"/>
+      </div>
+      <div class="service-back">
+        <p class="back-description">Seamless mobile experience with cutting-edge features for trading and monitoring on-the-go.</p>
+        <ul class="features">
+          <li><i class="bi bi-check-circle-fill"></i>Native iOS & Android apps</li>
+          <li><i class="bi bi-check-circle-fill"></i>Real-time push notifications</li>
+          <li><i class="bi bi-check-circle-fill"></i>Offline data synchronization</li>
+          <li><i class="bi bi-check-circle-fill"></i>Biometric authentication</li>
+          <li><i class="bi bi-check-circle-fill"></i>Dark mode & customization</li>
+          <li><i class="bi bi-check-circle-fill"></i>Apple Watch & wearable support</li>
+          <li><i class="bi bi-check-circle-fill"></i>Voice command integration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-box">
+      <div class="service-front">
+        <div class="icon-circle"><i class="bi bi-shield-lock"></i></div>
+        <h4>Data Security</h4>
+        <img src="assets/data security.jpeg" alt="Data Security" class="service-img"/>
+      </div>
+      <div class="service-back">
+        <p class="back-description">Bank-grade security infrastructure with military-level encryption to protect your financial data and investments.</p>
+        <ul class="features">
+          <li><i class="bi bi-check-circle-fill"></i>256-bit AES SSL encryption</li>
+          <li><i class="bi bi-check-circle-fill"></i>Multi-factor authentication</li>
+          <li><i class="bi bi-check-circle-fill"></i>SOC 2 Type II compliance</li>
+          <li><i class="bi bi-check-circle-fill"></i>Regular penetration testing</li>
+          <li><i class="bi bi-check-circle-fill"></i>Automated backup systems</li>
+          <li><i class="bi bi-check-circle-fill"></i>Zero-trust security model</li>
+          <li><i class="bi bi-check-circle-fill"></i>24/7 security monitoring</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-card">
+    <div class="service-box">
+      <div class="service-front">
+        <div class="icon-circle"><i class="bi bi-people-fill"></i></div>
+        <h4>Community Support</h4>
+        <img src="assets/community support.jpeg" alt="Community Support" class="service-img"/>
+      </div>
+      <div class="service-back">
+        <p class="back-description">Join our thriving community of traders with expert guidance, educational resources, and collaborative learning.</p>
+        <ul class="features">
+          <li><i class="bi bi-check-circle-fill"></i>24/7 multilingual support</li>
+          <li><i class="bi bi-check-circle-fill"></i>Active trading communities</li>
+          <li><i class="bi bi-check-circle-fill"></i>Weekly expert webinars</li>
+          <li><i class="bi bi-check-circle-fill"></i>Comprehensive learning center</li>
+          <li><i class="bi bi-check-circle-fill"></i>Personal trading mentorship</li>
+          <li><i class="bi bi-check-circle-fill"></i>Strategy sharing forums</li>
+          <li><i class="bi bi-check-circle-fill"></i>VIP customer success team</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+
+    <!-- Disclaimer Banner -->
+    <!-- <section class="disclaimer1">
+      <div class="container">
+        <div class="disclaimer-box">
+          <div class="badge-icon icon">!</div>
+          <div>
+            <h3 class="disclaimer-title"><span class="badge-icon">!</span> Warning</h3>
+            <p class="disclaimer-text">Share Pazaar offers research, tools, and education to help investors; it does not provide personalized investment advice or recommendations.</p>
+            <p class="disclaimer-text">Trading and investing involve risk. Review your risk profile and consult a SEBI‑registered advisor before investing.</p>
+            <p class="disclaimer-text">Payments for services should be made only to the official Share Pazaar bank/UPI shown on this site. We are not responsible for payments made to personal accounts.</p>
+            <div class="disclaimer-divider"></div>
+            <p class="disclaimer-note">SEBI/BASL registration and NISM certifications do not guarantee performance or returns.</p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+     <!--==================================================-->
+    <!-----START FOOTER SECTION----->
+    <!--===================================================-->
+
+    <style>
+        .footer {
+            background:#2e4da1;
+            color: #fff;
+            padding: 50px 0;
+        }
+        .footer .widget { margin-bottom: 20px; }
+        .footer h5 { font-size: 1.2rem; font-weight: 600; margin-bottom: 15px; color: #fff; }
+        .footer ul { list-style: none; padding: 0; }
+        .footer ul li { margin-bottom: 10px; }
+        .footer ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .footer ul li a:hover { color: #fff; }
+        .footer-about-social-icon ul { display: flex; list-style: none; padding: 0; margin-top: 20px; }
+        .footer-about-social-icon ul li { margin-right: 15px; }
+        .footer-about-social-icon ul li a { font-size: 18px; color: #fff; transition: color 0.3s; }
+        .footer-about-social-icon ul li a:hover { color: #4a69bd; }
+        .footer-logo img { max-width: 150px; margin-bottom: 15px; }
+        .footer-copyright-section { background:#2e4da1; color: #fff; padding: 20px 0; border-top: 1px solid #666; }
+        .footer-copyright-text p { margin: 0; font-size: 0.9rem; }
+        .footer-copyright-link ul { display: flex; justify-content: flex-end; list-style: none; padding: 0; margin: 0; }
+        .footer-copyright-link ul li { margin-left: 15px; }
+        .footer-copyright-link ul li a { color: #ccc; font-size: 0.9rem; transition: color 0.3s; }
+        .footer-copyright-link ul li a:hover { color: #fff; }
+        @media (max-width: 768px) {
+            .footer .row { flex-direction: column; align-items: center; text-align: center; }
+            .footer-copyright-link ul { justify-content: center; margin-top: 10px; }
+        }
+    </style>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="widget">
+                        <div class="about-company">
+                            <div class="footer-logo">
+                                <!-- First Logo (Graph) -->
+                              <img src="assets/stocklogo1.png" alt="Logo1" class="logo-img" style="height: 100px; width: 90px;">
+
+                             <!-- Second Logo / Website Name -->
+                              <img src="assets/stocklogo3.png" alt="Logo2" class="logo-img ms-2" style="height: 50px; width: 200px;">
+                            </div>
+                            <p>Empowering Investors with Innovation, Integrity, and Informed Decisions.</p>
+                            <div class="footer-about-social-icon">
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-1"></div>
+                <div class="col-md-6 col-lg-2">
+                    <div class="widget">
+                        <div class="footer-quick-link">
+                            <h5>Quick Links</h5>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="services.html">Services</a></li>
+                            
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-3">
+                    <div class="widget">
+                        <div class="footer-services">
+                            <h5>Our Services</h5>
+                            <ul>
+                                <li><a href="#stock-research">Stock Market Research & Analysis</a></li>
+                                <li><a href="#equity-trading">Equity & Derivatives Trading</a></li>
+                                <li><a href="#mutual-funds">Mutual Fund Investments</a></li>
+                                <li><a href="#ipo-guidance">IPO Guidance & Subscription</a></li>
+                                <li><a href="#financial-advisory">Financial Advisory & Consultancy</a></li>
+                                <li><a href="#risk-management">Risk Management & Wealth Planning</a></li>
+                                <li><a href="#algo-trading">Algo & Automated Trading Solutions</a></li>
+                                <li><a href="#market-insights">Market Insights & Daily Reports</a></li>
+                                <li><a href="#investor-education">Investor Education & Training</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="widget">
+                        <div class="footer-contact">
+                            <h5>Contact Us</h5>
+                            <h6>Share Pazaar Pvt. Ltd</h6>
+                            <p><b>Address: </b> Flat No.7, 2nd Floor, Srilatha Reddy Highbiscus, Vithalrao Nagar Road, Madhapur, Hyderabad, Telangana - 500081</p>
+                            <p><b>Phone: </b> +91 7288922456</p>
+                            <p><b>Email: </b> info@stocksysmarket.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-copyright-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="footer-copyright-text">
+                        <p>&copy; 2023-2025 Share Pazaar. All rights reserved.</p>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="footer-copyright-link">
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="services.html">Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>

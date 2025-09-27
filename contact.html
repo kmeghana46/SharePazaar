@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+  <!-- Font Awesome CSS for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="Stylesheet" href="css/styles.css">
+
+  
+    <style>
+    .hero { background: linear-gradient(135deg, #2e4da1, #002b5b); color: #fff; padding: 40px 20px 10px 20px; text-align: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+    .hero h1 { font-size: 3rem; font-weight: bold; }
+    .hero p { font-size: 1.2rem; margin-top: 15px; opacity: 0.95; }
+    @media (max-width:768px){ .hero h1{font-size:2.2rem;} .hero p{font-size:1rem;} }
+
+      * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Contact Us Section */
+.contact-us {
+    padding: 90px 0;
+    background-color: #f8f9fa;
+}
+
+.contact_from_box {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 8px;
+    height: 100%;
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact_from_box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(13, 110, 253, 0.1), transparent);
+    transition: left 0.5s;
+    z-index: 1;
+}
+
+.contact_from_box:hover::before {
+    left: 100%;
+}
+
+.contact_from_box > * {
+    position: relative;
+    z-index: 2;
+}
+
+.contact_title h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #0d6efd;
+}
+
+.form_box {
+    margin-bottom: 20px;
+}
+
+.form_box input,
+.form_box textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e3f2fd;
+    border-radius: 15px;
+    font-size: 14px;
+    transition: all 1s ease;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form_box input:focus,
+.form_box textarea:focus {
+    outline: none;
+    border: 1px solid #000;
+    border: 1px solid #e3f2fd;
+}
+
+.quote_btn button {
+    background: #0d6efd;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.quote_btn button:hover {
+    background: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Team Section Styles */
+.team-section {
+    background: #00d084;
+    padding: 40px;
+    width: 600px;
+    border-radius: 8px;
+    height: 100%;
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.1);
+}
+
+.team-section h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #0d6efd;
+}
+
+.team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.team-card {
+    background: white;
+    border: 2px solid #e3f2fd;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(13, 110, 253, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.team-card:hover::before {
+    left: 100%;
+}
+
+.team-card .name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.team-card .role {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0d6efd;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.team-card .xp {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+}
+
+/* Map Section */
+.map-section {
+    margin-top: 0;
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 350px;
+    border: 0;
+}
+
+#formMessage {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Subscribe Section */
+/* Subscribe Section - Updated to match team/contact styling */
+#subscribe {
+    background-color: #f8f9fa;
+    border: 2px solid #e3f2fd;
+    border-radius: 15px;
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+#subscribe::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(13, 110, 253, 0.1), transparent);
+    transition: left 0.5s;
+    z-index: 1;
+}
+
+#subscribe:hover::before {
+    left: 100%;
+}
+
+#subscribe:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+#subscribe > * {
+    position: relative;
+    z-index: 2;
+}
+
+#subscribe h3 {
+    color: #0d6efd;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#subscribeForm input[type="email"] {
+    width: 80%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #e3f2fd;
+    border-radius: 15px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#subscribeForm input[type="email"]:focus {
+    border-color: #0d6efd;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+#subscribeForm button {
+    padding: 15px 30px;
+    background-color: #0d6efd;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#subscribeForm button:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+#subscribe-message {
+    margin-top: 15px;
+    color: #0d6efd;
+    font-weight: bold;
+    display: none;
+}
+
+/* Responsive updates for subscribe section */
+@media (max-width: 500px) {
+    #subscribe {
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+
+    #subscribe h3 {
+        font-size: 1.5rem;
+    }
+
+    #subscribeForm input[type="email"] {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    #subscribeForm button {
+        width: 100%;
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    background: #4c4b51;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.footer .widget {
+    margin-bottom: 20px;
+}
+
+.footer h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.footer h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #fff;
+}
+
+.footer p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.footer-about-social-icon ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.footer-about-social-icon ul li {
+    margin-right: 15px;
+}
+
+.footer-about-social-icon ul li a {
+    font-size: 18px;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-about-social-icon ul li a:hover {
+    color: #4a69bd;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-copyright-section {
+    background: #4c4b51;
+    color: #fff;
+    padding: 20px 0;
+    border-top: 1px solid #666;
+}
+
+.footer-copyright-text p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.footer-copyright-link ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-copyright-link ul li {
+    margin-left: 15px;
+    margin-bottom: 0;
+}
+
+.footer-copyright-link ul li a {
+    color: #ccc;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-copyright-link ul li a:hover {
+    color: #fff;
+}
+
+/* Base styles for common elements */
+a, i, cite, em, var, address, dfn {
+    font-style: normal;
+    font-weight: 500;
+}
+
+address, dl, fieldset, figure, ol, p, pre, ul {
+    margin: 0 0 20px 0;
+}
+
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Layout Utilities */
+.row-equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-equal-height > [class*='col-'] {
+    display: flex;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+
+
+/* Success and error message styles */
+#formMessage.success {
+    color: #28a745;
+}
+
+#formMessage.error {
+    color: #dc3545;
+}
+
+/* Loading state for buttons */
+.quote_btn button:disabled,
+#subscribeForm button:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Accessibility improvements */
+.team-card:focus,
+.quote_btn button:focus,
+#subscribeForm button:focus,
+.form_box input:focus,
+.form_box textarea:focus {
+    outline: 2px solid;
+    outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-us {
+        padding: 60px 0;
+    }
+    
+    .contact_from_box,
+    .team-section {
+        margin-bottom: 30px;
+        padding: 30px 20px;
+    }
+    
+    .contact_title h3 {
+        font-size: 1.5rem;
+    }
+    
+    .team-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .team-card .name {
+        font-size: 1.1rem;
+    }
+    
+    .footer .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-copyright-link ul {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    .footer-copyright-link ul li {
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 500px) {
+    #subscribe {
+        padding: 20px 15px;
+    }
+
+    #subscribeForm input[type="email"] {
+        width: 100%;
+    }
+
+    #subscribeForm button {
+        width: 100%;
+    }
+    
+    .team-card {
+        padding: 15px;
+    }
+    
+    .team-card .name {
+        font-size: 1rem;
+    }
+    
+    .team-card .role {
+        font-size: 0.9rem;
+    }
+    
+    .team-card .xp {
+        font-size: 0.8rem;
+    }
+    
+    .form_box input,
+    .form_box textarea {
+        padding: 12px;
+        font-size: 13px;
+    }
+    
+    .quote_btn button {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+
+</style>
+</head>
+<body>
+<div class="capsule-navbar">
+    <nav class="navbar navbar-expand-lg p-0">
+        <div class="container-fluid">
+             <!-- Logo positioned at top left -->
+                <a href="index.html" class="navbar-brand d-flex align-items-center">
+             <!-- First Logo (Graph) -->
+                 <img src="assets/stocklogo1.png" alt="Logo1" class="logo-img" style="height: 80px; width: 80px;">
+
+            <!-- Second Logo / Website Name -->
+                <img src="assets/stocklogo3.png" alt="Logo2" class="logo-img ms-2" style="height: 50px; width: 190px;">
+                </a>
+            <!-- Mobile toggle button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navigation menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#hero-section">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <a href="contact.html#subscribe" class="btn btn-primary px-4 rounded-pill">Subscription</a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+        <!-- Hero Section -->
+        <section class="hero pt-1">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you — reach us anytime</p>
+        </section>
+   <div class="contact-us">
+        <div class="container">
+            <div class="row row-equal-height">
+                <div class="col-lg-6 col-md-12">
+                    <div class="contact_from_box">
+                        <div class="contact_title">
+                            <h3>Get In Touch</h3>
+                        </div>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form_box">
+                                        <input type="text" name="name" placeholder="Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form_box">
+                                        <input type="text" name="phone" placeholder="Phone Number">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form_box">
+                                        <input type="email" name="email" placeholder="Email Address" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form_box">
+                                        <input type="text" name="company" placeholder="Company Name (Optional)">
+                                    </div>
+                                </div>                                
+                                <div class="col-lg-12">
+                                    <div class="form_box">
+                                        <textarea name="message" cols="30" rows="6" placeholder="Your Message" required></textarea>
+                                    </div>
+                                    <div class="quote_btn">
+                                        <button type="submit">Send Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Success/Error Message -->
+                        <div id="formMessage"></div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-12">
+                    <!-- Our Team -->
+                    <div class="team-section" style="margin:0;">
+                        <h3 style="text-align:center;color:#000;margin-top:0;">Our Team</h3>
+                        <div class="team-grid">
+                            <div class="team-card">
+                                <div class="name">Srinivas</div>
+                                <div class="role">Founder & CEO</div>
+                                <div class="xp">15+ years in finance</div>
+                            </div>
+                            <div class="team-card">
+                                <div class="name">Mahendar</div>
+                                <div class="role">Head of Research</div>
+                                <div class="xp">12+ years analyst</div>
+                            </div>
+                            <div class="team-card">
+                                <div class="name">Sadar Singh</div>
+                                <div class="role">CTO</div>
+                                <div class="xp">10+ years fintech</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="subscribe" class="subscribe-form">
+        <h3>Stay Updated</h3>
+        <form id="subscribeForm">
+            <input type="email" name="subscribe_email" placeholder="Enter your mail-id" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <div id="subscribe-message">✅ You are now subscribed!</div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="map-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 p-0">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7612.7706994399!2d78.38042063606879!3d17.441260769440085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93e2259ec6d1%3A0x78b017cc55f52306!2sVittal%20Rao%20Nagar%2C%20Madhapur%2C%20Hyderabad%2C%20Telangana%20500081!5e0!3m2!1sen!2sin!4v1753695680963!5m2!1sen!2sin" 
+                            allowfullscreen="" 
+                            aria-hidden="false" 
+                            tabindex="0">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--==================================================-->
+    <!-----START FOOTER SECTION----->
+    <!--===================================================-->
+
+    <style>
+        .footer {
+            background:#2e4da1;
+            color: #fff;
+            padding: 50px 0;
+        }
+        .footer .widget { margin-bottom: 20px; }
+        .footer h5 { font-size: 1.2rem; font-weight: 600; margin-bottom: 15px; color: #fff; }
+        .footer ul { list-style: none; padding: 0; }
+        .footer ul li { margin-bottom: 10px; }
+        .footer ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .footer ul li a:hover { color: #fff; }
+        .footer-about-social-icon ul { display: flex; list-style: none; padding: 0; margin-top: 20px; }
+        .footer-about-social-icon ul li { margin-right: 15px; }
+        .footer-about-social-icon ul li a { font-size: 18px; color: #fff; transition: color 0.3s; }
+        .footer-about-social-icon ul li a:hover { color: #4a69bd; }
+        .footer-logo img { max-width: 150px; margin-bottom: 15px; }
+        .footer-copyright-section { background:#2e4da1; color: #fff; padding: 20px 0; border-top: 1px solid #666; }
+        .footer-copyright-text p { margin: 0; font-size: 0.9rem; }
+        .footer-copyright-link ul { display: flex; justify-content: flex-end; list-style: none; padding: 0; margin: 0; }
+        .footer-copyright-link ul li { margin-left: 15px; }
+        .footer-copyright-link ul li a { color: #ccc; font-size: 0.9rem; transition: color 0.3s; }
+        .footer-copyright-link ul li a:hover { color: #fff; }
+        @media (max-width: 768px) {
+            .footer .row { flex-direction: column; align-items: center; text-align: center; }
+            .footer-copyright-link ul { justify-content: center; margin-top: 10px; }
+        }
+    </style>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="widget">
+                        <div class="about-company">
+                            <div class="footer-logo">
+                                <!-- First Logo (Graph) -->
+                              <img src="assets/stocklogo1.png" alt="Logo1" class="logo-img" style="height: 100px; width: 90px;">
+
+                             <!-- Second Logo / Website Name -->
+                              <img src="assets/stocklogo3.png" alt="Logo2" class="logo-img ms-2" style="height: 50px; width: 200px;">
+                            </div>
+                            <p>Empowering Investors with Innovation, Integrity, and Informed Decisions.</p>
+                            <div class="footer-about-social-icon">
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-1"></div>
+                <div class="col-md-6 col-lg-2">
+                    <div class="widget">
+                        <div class="footer-quick-link">
+                            <h5>Quick Links</h5>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="services.html">Services</a></li>
+                            
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-3">
+                    <div class="widget">
+                        <div class="footer-services">
+                            <h5>Our Services</h5>
+                            <ul>
+                                <li><a href="#stock-research">Stock Market Research & Analysis</a></li>
+                                <li><a href="#equity-trading">Equity & Derivatives Trading</a></li>
+                                <li><a href="#mutual-funds">Mutual Fund Investments</a></li>
+                                <li><a href="#ipo-guidance">IPO Guidance & Subscription</a></li>
+                                <li><a href="#financial-advisory">Financial Advisory & Consultancy</a></li>
+                                <li><a href="#risk-management">Risk Management & Wealth Planning</a></li>
+                                <li><a href="#algo-trading">Algo & Automated Trading Solutions</a></li>
+                                <li><a href="#market-insights">Market Insights & Daily Reports</a></li>
+                                <li><a href="#investor-education">Investor Education & Training</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="widget">
+                        <div class="footer-contact">
+                            <h5>Contact Us</h5>
+                            <h6>Share Pazaar Pvt. Ltd</h6>
+                            <p><b>Address: </b> Flat No.7, 2nd Floor, Srilatha Reddy Highbiscus, Vithalrao Nagar Road, Madhapur, Hyderabad, Telangana - 500081</p>
+                            <p><b>Phone: </b> +91 7288922456</p>
+                            <p><b>Email: </b> info@stocksysmarket.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-copyright-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="footer-copyright-text">
+                        <p>&copy; 2023-2025 Share Pazaar. All rights reserved.</p>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="footer-copyright-link">
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="services.html">Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>

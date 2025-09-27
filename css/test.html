@@ -1,0 +1,403 @@
+<!-- Testimonials Section -->
+<section class="testimonials-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="section-title">What Our Clients Say</h2>
+          <p class="section-subtitle">Hear from traders and investors who have transformed their strategies with Share Pazaar</p>
+        </div>
+      </div>
+      
+      <div class="testimonial-carousel-wrapper">
+        <div class="testimonial-carousel" id="testimonialCarousel">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="quote-icon">"</div>
+              <p class="testimonial-text">Share Pazaar's insights have completely transformed my trading approach. Their accurate market analysis helped me achieve consistent profits even in volatile conditions.</p>
+              <div class="client-info">
+                <div class="client-avatar">
+                  <img src="assets/corporate-man.jpeg" alt="Rajesh Kumar" class="client-img">
+                </div>
+                <div class="client-details">
+                  <h5 class="client-name">Rajesh Kumar</h5>
+                  <p class="client-title">Day Trader</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="quote-icon">"</div>
+              <p class="testimonial-text">The portfolio management service is exceptional. My investments have grown by 35% in just 6 months with minimal risk exposure. Highly recommended for serious investors.</p>
+              <div class="client-info">
+                <div class="client-avatar">
+                  <img src="assets/corporate-woman.jpg" alt="Priya Sharma" class="client-img">
+                </div>
+                <div class="client-details">
+                  <h5 class="client-name">Priya Sharma</h5>
+                  <p class="client-title">Long-term Investor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="quote-icon">"</div>
+              <p class="testimonial-text">As a beginner, I was overwhelmed by the stock market. Share Pazaar's educational resources and personalized guidance gave me the confidence to start trading successfully.</p>
+              <div class="client-info">
+                <div class="client-avatar">
+                  <img src="assets/corporate-man.jpeg" alt="Amit Patel" class="client-img">
+                </div>
+                <div class="client-details">
+                  <h5 class="client-name">Amit Patel</h5>
+                  <p class="client-title">Beginner Trader</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 4 -->
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="quote-icon">"</div>
+              <p class="testimonial-text">The algorithmic trading concepts work flawlessly across different markets. I've successfully applied their strategies to forex and crypto with impressive results.</p>
+              <div class="client-info">
+                <div class="client-avatar">
+                  <img src="assets/corporate-man.jpeg" alt="Sanjay Reddy" class="client-img">
+                </div>
+                <div class="client-details">
+                  <h5 class="client-name">Sanjay Reddy</h5>
+                  <p class="client-title">Multi-Asset Trader</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 5 -->
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="quote-icon">"</div>
+              <p class="testimonial-text">Professional, reliable, and innovative solutions that exceeded my expectations. The team truly understands the needs of Indian traders and delivers exceptional value.</p>
+              <div class="client-info">
+                <div class="client-avatar">
+                  <img src="assets/corporate-woman.jpg" alt="Neha Gupta" class="client-img">
+                </div>
+                <div class="client-details">
+                  <h5 class="client-name">Neha Gupta</h5>
+                  <p class="client-title">Business Owner</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 6 -->
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <div class="quote-icon">"</div>
+              <p class="testimonial-text">The real-time market insights have been invaluable for my swing trading strategy. I've significantly improved my entry and exit timing with their precise analysis.</p>
+              <div class="client-info">
+                <div class="client-avatar">
+                  <img src="assets/corporate-man.jpeg" alt="Vikram Singh" class="client-img">
+                </div>
+                <div class="client-details">
+                  <h5 class="client-name">Vikram Singh</h5>
+                  <p class="client-title">Swing Trader</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Carousel Navigation Dots - Only 2 dots -->
+        <div class="carousel-dots">
+          <button class="dot active" data-index="0"></button>
+          <button class="dot" data-index="1"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  /* Testimonial Carousel */
+  .testimonial-carousel-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+  
+  .testimonial-carousel {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+  
+  .testimonial-card {
+    flex: 0 0 calc(33.333% - 1.33rem);
+    scroll-snap-align: start;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 2rem 1.5rem; /* Increased top/bottom padding */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(13, 110, 253, 0.1);
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #0d6efd, #08fc76);
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  }
+  
+  .testimonial-content {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .quote-icon {
+    font-size: 2.5rem;
+    color: #0d6efd;
+    line-height: 1;
+    margin-bottom: 1rem; /* Increased margin */
+    opacity: 0.7;
+  }
+  
+  .testimonial-text {
+    color: #475569;
+    font-size: 1rem; /* Normal font size */
+    line-height: 1.6; /* Increased line height */
+    margin-bottom: 1.5rem; /* Increased margin */
+    font-style: italic;
+    flex: 1;
+  }
+  
+  .client-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Increased gap */
+    margin-top: auto;
+  }
+  
+  .client-avatar {
+    width: 70px; /* Increased from 50px */
+    height: 70px; /* Increased from 50px */
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0d6efd, #08fc76);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 3px solid #e2e8f0; /* Increased border */
+  }
+  
+  .client-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  /* Fallback for missing images */
+  .client-avatar:not(:has(.client-img[src])) {
+    background: linear-gradient(135deg, #0d6efd, #08fc76);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .client-avatar:not(:has(.client-img[src]))::after {
+    content: '\f007'; /* Font Awesome user icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: white;
+    font-size: 1.8rem; /* Increased icon size */
+  }
+  
+  .client-details {
+    min-width: 0;
+  }
+  
+  .client-details h5 {
+    margin: 0 0 0.25rem 0; /* Added bottom margin */
+    color: #0d6efd;
+    font-weight: 700; /* Bolder font */
+    font-size: 1.1rem; /* Larger font size */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .client-details p {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.9rem; /* Slightly larger */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Carousel Dots - Only 2 dots */
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  
+  .dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #cbd5e1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+  }
+  
+  .dot.active {
+    background-color: #0d6efd;
+    transform: scale(1.3);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .testimonial-card {
+      flex: 0 0 calc(50% - 1rem);
+      min-height: 300px;
+      padding: 1.5rem 1.25rem;
+    }
+    
+    .client-avatar {
+      width: 60px; /* Slightly smaller for tablet */
+      height: 60px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .testimonial-card {
+      flex: 0 0 100%;
+      min-height: 280px;
+      padding: 1.25rem 1rem;
+    }
+    
+    .testimonial-carousel {
+      gap: 1.5rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .client-info {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.75rem;
+    }
+    
+    .client-details h5,
+    .client-details p {
+      white-space: normal;
+      text-align: center;
+    }
+    
+    .client-avatar {
+      width: 55px; /* Slightly smaller for mobile */
+      height: 55px;
+    }
+    
+    .client-details h5 {
+      font-size: 1rem; /* Slightly smaller for mobile */
+    }
+  }
+  
+  // Testimonial Carousel Functionality with 2 dots
+  document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('testimonialCarousel');
+    const dots = document.querySelectorAll('.dot');
+    let cardWidth = document.querySelector('.testimonial-card').offsetWidth + 32;
+    let currentGroup = 0;
+    const testimonialsPerGroup = 3;
+    const totalGroups = 2;
+    
+    dots.forEach(dot => {
+      dot.addEventListener('click', function() {
+        const groupIndex = parseInt(this.getAttribute('data-index'));
+        scrollToGroup(groupIndex);
+        updateActiveDot(groupIndex);
+      });
+    });
+    
+    function scrollToGroup(groupIndex) {
+      const scrollPosition = groupIndex * testimonialsPerGroup * cardWidth;
+      carousel.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+      currentGroup = groupIndex;
+    }
+    
+    function updateActiveDot(index) {
+      dots.forEach(dot => {
+        dot.classList.remove('active');
+      });
+      dots[index].classList.add('active');
+    }
+    
+    carousel.addEventListener('scroll', function() {
+      const scrollPosition = carousel.scrollLeft;
+      const groupIndex = Math.round(scrollPosition / (testimonialsPerGroup * cardWidth));
+      
+      if (groupIndex !== currentGroup) {
+        updateActiveDot(groupIndex);
+        currentGroup = groupIndex;
+      }
+    });
+    
+    let autoScrollInterval;
+    
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(() => {
+        const nextGroup = (currentGroup + 1) % totalGroups;
+        scrollToGroup(nextGroup);
+      }, 5000);
+    }
+    
+    function stopAutoScroll() {
+      clearInterval(autoScrollInterval);
+    }
+    
+    startAutoScroll();
+    
+    carousel.addEventListener('mouseenter', stopAutoScroll);
+    carousel.addEventListener('mouseleave', startAutoScroll);
+    
+    window.addEventListener('resize', function() {
+      cardWidth = document.querySelector('.testimonial-card').offsetWidth + 32;
+    });
+  });
