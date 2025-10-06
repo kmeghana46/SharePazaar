@@ -891,10 +891,10 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
         const result = await response.json();
         document.getElementById("formMessage").innerText =
-            result.message || "✅ Message sent successfully!";
+            result.message || "Message sent successfully!";
         document.getElementById("formMessage").className = "success";
     } catch (err) {
-        document.getElementById("formMessage").innerText = "❌ Failed to send!";
+        document.getElementById("formMessage").innerText = " Failed to send!";
         document.getElementById("formMessage").className = "error";
     }
 });
@@ -927,7 +927,7 @@ subscribeForm.addEventListener("submit", async (e) => {
         }
     } catch (error) {
         console.error(error);
-        subscribeMessage.textContent = "⚠️ Server error.";
+        subscribeMessage.textContent = " Server error.";
         subscribeMessage.style.display = "block";
     }
 });
